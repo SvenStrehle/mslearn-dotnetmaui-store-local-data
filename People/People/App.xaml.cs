@@ -4,13 +4,15 @@ public partial class App : Application
 {
     // TODO: Add a public static PersonRepository property
 
-    public App()
-	{
-		InitializeComponent();
+    public static PersonRepository PersonRepo { get; private set; }
 
-		MainPage = new AppShell();
+    public App(PersonRepository repo)
+    {
+        InitializeComponent();
 
-        // TODO: Initialize the PersonRepository property with the PersonRespository singleton object
+        MainPage = new AppShell();
 
+        // TODO: Initialize the PersonRepository property with the PersonRepository singleton object
+        PersonRepo = repo;
     }
 }
